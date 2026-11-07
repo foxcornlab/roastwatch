@@ -1,0 +1,87 @@
+[
+  {
+    "dn": "CN=svc-backup,OU=Service Accounts,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["svc-backup"],
+      "userAccountControl": 4260352,
+      "adminCount": [1],
+      "pwdLastSet": ["133671936000000000"]
+    }
+  },
+  {
+    "dn": "CN=svc-sql,OU=Service Accounts,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["svc-sql"],
+      "userAccountControl": 66048,
+      "servicePrincipalName": ["MSSQLSvc/sql01.corp.local:1433"],
+      "pwdLastSet": ["134288832000000000"]
+    }
+  },
+  {
+    "dn": "CN=svc-web,OU=Service Accounts,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["svc-web"],
+      "userAccountControl": 512,
+      "servicePrincipalName": ["HTTP/web01.corp.local"],
+      "pwdLastSet": ["134017536000000000"]
+    }
+  },
+  {
+    "dn": "CN=svc-des,OU=Service Accounts,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["svc-des"],
+      "userAccountControl": 2097664,
+      "servicePrincipalName": ["cifs/legacy01.corp.local"],
+      "pwdLastSet": ["133844736000000000"]
+    }
+  },
+  {
+    "dn": "CN=svc-aes,OU=Service Accounts,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["svc-aes"],
+      "userAccountControl": 512,
+      "servicePrincipalName": ["HTTP/newweb.corp.local"],
+      "msDS-SupportedEncryptionTypes": 24,
+      "pwdLastSet": ["134301440000000000"]
+    }
+  },
+  {
+    "dn": "CN=jdoe,OU=People,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["jdoe"],
+      "userAccountControl": 512,
+      "pwdLastSet": ["134345856000000000"]
+    }
+  },
+  {
+    "dn": "CN=svc-card,OU=People,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["svc-card"],
+      "userAccountControl": 262656,
+      "pwdLastSet": ["0"]
+    }
+  },
+  {
+    "dn": "CN=disabled-svc,OU=Service Accounts,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["disabled-svc"],
+      "userAccountControl": 514,
+      "servicePrincipalName": ["HTTP/old.corp.local"]
+    }
+  },
+  {
+    "dn": "CN=PC01,OU=Workstations,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["PC01$"],
+      "userAccountControl": 4608,
+      "servicePrincipalName": ["HOST/pc01.corp.local"]
+    }
+  },
+  {
+    "dn": "CN=krbtgt,CN=Users,DC=corp,DC=local",
+    "attrs": {
+      "sAMAccountName": ["krbtgt"],
+      "userAccountControl": 514
+    }
+  }
+]
