@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="440" viewBox="0 0 940 440" role="img" aria-label="Decision flow: what makes an account roastable">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <rect width="940" height="440" fill="#0d1117"/>
+  <text x="36" y="36" font-family="ui-monospace, 'DejaVu Sans Mono', Menlo, monospace" font-size="20" font-weight="bold" fill="#e6edf3">What makes an account roastable</text>
+
+  <g font-family="ui-monospace, 'DejaVu Sans Mono', Menlo, monospace">
+    <!-- account box -->
+    <rect x="36" y="76" width="170" height="48" rx="10" fill="#161b22" stroke="#30363d"/>
+    <text x="121" y="105" font-size="16" fill="#e6edf3" text-anchor="middle">user account</text>
+
+    <line x1="206" y1="100" x2="238" y2="100" stroke="#8b949e" stroke-width="2" marker-end="url(#arr)"/>
+
+    <!-- decision 1: has SPN -->
+    <rect x="246" y="76" width="170" height="48" rx="10" fill="#161b22" stroke="#d29922"/>
+    <text x="331" y="97" font-size="16" fill="#e6edf3" text-anchor="middle">has SPN set?</text>
+    <text x="331" y="115" font-size="12" fill="#8b949e" text-anchor="middle">servicePrincipalName</text>
+
+    <!-- decision 2: preauth disabled -->
+    <rect x="486" y="76" width="250" height="48" rx="10" fill="#161b22" stroke="#f85149"/>
+    <text x="611" y="97" font-size="16" fill="#e6edf3" text-anchor="middle">preauth disabled?</text>
+    <text x="611" y="115" font-size="12" fill="#8b949e" text-anchor="middle">userAccountControl 0x400000</text>
+
+    <!-- not roastable -->
+    <rect x="776" y="76" width="128" height="48" rx="10" fill="#161b22" stroke="#30363d"/>
+    <text x="840" y="97" font-size="15" fill="#8b949e" text-anchor="middle">not</text>
+    <text x="840" y="115" font-size="15" fill="#8b949e" text-anchor="middle">roastable</text>
+
+    <line x1="456" y1="100" x2="478" y2="100" stroke="#8b949e" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="462" y="90" font-size="12" fill="#8b949e">no</text>
+    <line x1="736" y1="100" x2="768" y2="100" stroke="#8b949e" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="742" y="90" font-size="12" fill="#8b949e">no</text>
+
+    <!-- verdict chips -->
+    <line x1="331" y1="124" x2="331" y2="168" stroke="#8b949e" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="338" y="152" font-size="12" fill="#8b949e">yes</text>
+    <line x1="611" y1="124" x2="611" y2="168" stroke="#8b949e" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="618" y="152" font-size="12" fill="#8b949e">yes</text>
+
+    <rect x="246" y="176" width="170" height="44" rx="10" fill="#161b22" stroke="#d29922"/>
+    <text x="331" y="203" font-size="16" fill="#d29922" text-anchor="middle">Kerberoastable</text>
+
+    <rect x="526" y="176" width="180" height="44" rx="10" fill="#161b22" stroke="#f85149"/>
+    <text x="616" y="203" font-size="16" fill="#f85149" text-anchor="middle">AS-REP roastable</text>
+
+    <!-- what you get -->
+    <text x="246" y="252" font-size="13" fill="#3fb950">$krb5tgs$23$*user$realm$spn*$hex$hex</text>
+    <text x="526" y="252" font-size="13" fill="#3fb950">$krb5asrep$23$user@REALM:hex$hex</text>
+
+    <!-- risk notes -->
+    <text x="36" y="304" font-size="14" fill="#8b949e">risk notes printed per account:</text>
+    <g font-size="13">
+      <rect x="36" y="316" width="96" height="32" rx="16" fill="#161b22" stroke="#30363d"/>
+      <text x="84" y="337" fill="#e6edf3" text-anchor="middle">DES-only</text>
+      <rect x="148" y="316" width="136" height="32" rx="16" fill="#161b22" stroke="#30363d"/>
+      <text x="216" y="337" fill="#e6edf3" text-anchor="middle">RC4-era keys</text>
+      <rect x="300" y="316" width="76" height="32" rx="16" fill="#161b22" stroke="#30363d"/>
+      <text x="338" y="337" fill="#e6edf3" text-anchor="middle">admin</text>
+      <rect x="392" y="316" width="106" height="32" rx="16" fill="#161b22" stroke="#30363d"/>
+      <text x="445" y="337" fill="#e6edf3" text-anchor="middle">smartcard</text>
+      <rect x="514" y="316" width="176" height="32" rx="16" fill="#161b22" stroke="#30363d"/>
+      <text x="602" y="337" fill="#e6edf3" text-anchor="middle">pwd never expires</text>
+      <rect x="706" y="316" width="120" height="32" rx="16" fill="#161b22" stroke="#30363d"/>
+      <text x="766" y="337" fill="#e6edf3" text-anchor="middle">pwd age 817d</text>
+    </g>
+
+    <text x="36" y="392" font-size="14" fill="#8b949e">enum reads an LDIF or JSON export offline: no packets leave the box.</text>
+    <text x="36" y="414" font-size="14" fill="#8b949e">exit 1 when any account lands in a colored row, 0 when the export is clean.</text>
+  </g>
+</svg>

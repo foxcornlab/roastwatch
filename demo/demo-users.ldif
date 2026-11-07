@@ -1,0 +1,28 @@
+# demo fixture: small user set for the demo transcript
+dn: CN=svc-backup,OU=Service Accounts,DC=corp,DC=local
+sAMAccountName: svc-backup
+userAccountControl: 4260352
+adminCount: 1
+pwdLastSet: 133671936000000000
+
+dn: CN=svc-sql,OU=Service Accounts,DC=corp,DC=local
+sAMAccountName: svc-sql
+userAccountControl: 66048
+servicePrincipalName: MSSQLSvc/sql01.corp.local:1433
+pwdLastSet: 134288832000000000
+
+dn: CN=svc-web,OU=Service Accounts,DC=corp,DC=local
+sAMAccountName: svc-web
+userAccountControl: 512
+servicePrincipalName: HTTP/web01.corp.local
+pwdLastSet: 134017536000000000
+
+dn: CN=jdoe,OU=People,DC=corp,DC=local
+sAMAccountName: jdoe
+userAccountControl: 512
+pwdLastSet: 134345856000000000
+
+dn: CN=disabled-svc,OU=Service Accounts,DC=corp,DC=local
+sAMAccountName: disabled-svc
+userAccountControl: 514
+servicePrincipalName: HTTP/old.corp.local
